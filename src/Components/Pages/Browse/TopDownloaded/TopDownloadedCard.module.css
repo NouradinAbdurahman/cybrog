@@ -1,0 +1,72 @@
+.topDownloadedCard {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #26292a;
+    padding: 20px 0;
+}
+.topDownloadedCardImage {
+    width: 100%;
+    height: 100%;
+}
+.topDownloadedCardImage img {
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+}
+.cardTitle {
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+}
+.cardDesc {
+    font-size: 15px;
+    color: var(--link-color);
+    padding: 5px 0;
+    margin: 0;
+}
+.cardTitleStars {
+    display: flex;
+    flex-direction: column;
+}
+.cardDescDownloads {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.stars {
+    padding-right: 10px;
+}
+.cardTitleStars span , .cardDescDownloads span {
+    padding-left: 5px;
+    font-size: 14px;
+}
+.topDownloadedCardImage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.topDownloadedCardInfo {
+    padding: 0 20px;
+}
+.topDownloadedCardBtn {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: #26292a;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}

@@ -1,0 +1,38 @@
+
+.mostPopularLiveStream {
+    position: relative;
+}
+.mostPopularTitle {
+    padding-top: 20px;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-bottom: 15px;
+    color: #eb608f;
+}
+.mostPopularTitle span {
+    color: white;
+    text-decoration: underline;
+}
+.mostPopularLiveStreamCardContent {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.button {
+    cursor: pointer;
+}
+.button {
+    position: absolute;
+    content: " ";
+    width: 200px;
+    padding: 10px 0;
+    bottom: -40px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}

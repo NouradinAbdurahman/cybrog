@@ -1,0 +1,42 @@
+.mostPopularClipsImage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: " ";
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mostPopularClipsInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.mostPopularClipsInfo h3 {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+.mostPopularClipsInfo p {
+    font-size: 15px;
+}

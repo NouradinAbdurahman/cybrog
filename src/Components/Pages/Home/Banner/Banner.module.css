@@ -1,0 +1,68 @@
+.banner {
+    padding: 10px;
+    background-image: url("../../../../Assets/banner-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    color: white;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.banner_content {
+    width: 50%;
+    margin: 80px 50px;
+}
+.banner .title {
+    font-size: 1.5rem;
+}
+.banner .desc {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+.banner span {
+    color: var(--main-color);
+}
+@media screen  and (max-width: 1024px) {
+    .banner .title {
+        font-size: 1.3rem;
+    }
+    .banner .desc {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 1.8rem;
+    }
+    .button {
+        padding: 7px 15px;
+        font-size: .9rem;
+    }
+}
+
+@media screen  and (max-width: 600px) {
+    .banner_content {
+        width: 100%;
+        margin: 80px 10px;
+    }
+    .banner .title {
+        font-size: 1rem;
+    }
+    .banner .desc {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 1.1rem;
+    }
+    .button {
+        padding: 7px 15px;
+        font-size: .9rem;
+    }
+}

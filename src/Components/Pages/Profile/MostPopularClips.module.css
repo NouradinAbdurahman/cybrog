@@ -1,0 +1,33 @@
+.mostPopularClips {
+    padding: 30px 0;
+}
+.mostPopularClipsCrds {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 20px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center; */
+}
+.mostPopularClipsTitle {
+    padding-top: 20px;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-bottom: 30px;
+    color: #eb608f;
+}
+.mostPopularClipsTitle span {
+    color: white;
+    text-decoration: underline;
+}
+.MostPopularClipsButton {
+    padding: 50px 0 0 0 ;
+    text-align: center;
+}
+.MostPopularClipsButton .button {
+    font-size: .9rem;
+}
+.MostPopularClipsButton .button:hover {
+    color: #eb608f;
+}

@@ -1,0 +1,75 @@
+.streamContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.streamGames {
+    width: 65%;
+}
+.topStreams {
+    width: 33%;
+}
+.viewAllGames {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: #eb608f;
+    cursor: pointer;
+}
+.streamTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.streamTitle, .topStreamsTitle {
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-bottom: 15px;
+    color: #eb608f;
+}
+.streamTitle span, .topStreamsTitle span {
+    color: white;
+    text-decoration: underline;
+    padding-right: 10px;
+}
+.topStreamsTitle {
+    font-size: 1.7rem;
+}
+.streamCards {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px; */
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.prevNextBtn {
+    cursor: pointer;
+}
+.prevNextBtn:hover {
+    color: #eb608f;
+}
+.mostPopularLiveStream {
+    margin-top: 50px;
+}
+@media screen and (max-width: 1024px) {
+    .streamContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .streamGames {
+        width: 100%;
+    }
+    .topStreams {
+        width: 100%;
+        margin-top: 30px;
+    }
+}

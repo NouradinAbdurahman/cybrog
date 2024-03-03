@@ -1,0 +1,62 @@
+.otherRelatedGames {
+    padding: 50px 0;
+}
+.otherRelatedGamesTitle {
+    padding-top: 20px;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-bottom: 50px;
+    color: #eb608f;
+}
+.otherRelatedGamesTitle span {
+    color: white;
+    text-decoration: underline;
+}
+.otherRelatedGamesContent {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+}
+.otherRelatedGamesContentLeft, .otherRelatedGamesContentRight {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.otherRelatedGamesContentLeftContent, .otherRelatedGamesContentRightContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #26292a;
+
+}
+.imageName {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.image img {
+    margin-right: 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.name h3 {
+    font-size: 18px;
+    font-weight: bolder;
+}
+.name p {
+    font-size: 17px;
+    color: #666;
+}

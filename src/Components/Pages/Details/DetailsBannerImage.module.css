@@ -1,0 +1,55 @@
+.detailsBannerImageTopContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+.rightInfo p  {
+    padding-bottom: 10px;
+}
+.rightInfoContent h4 {
+    padding-bottom: 10px;
+}
+.rightInfoContent p {
+    color: #666666;
+}
+.rightInfo, .leftInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: #26292a;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.detailsBannerImageBottomImages {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+.detailsBannerImageBottomImages img {
+    width: 100%;
+    text-align: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.detailsBannerImageBottomContent p {
+    padding-top: 30px;
+    color: #666666;
+    line-height: 1.5;
+}
+.buuton {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #e75e8c;
+    color: #e75e8c;
+}

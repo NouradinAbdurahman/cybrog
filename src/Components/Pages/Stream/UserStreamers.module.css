@@ -1,0 +1,49 @@
+.userStreamers {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #26292a;
+}
+.userStreamers:last-child {
+    border-bottom:  unset;
+}
+.userStreamersContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.userStreamersContentInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: 0 20px;
+}
+.button span {
+    color: white;
+}
+.button:hover span {
+    color: #eb608f;
+}
+.name {
+    color: #eb608f;
+}
+.count {
+    font-size: 1.1rem;
+    font-weight: bolder;
+}

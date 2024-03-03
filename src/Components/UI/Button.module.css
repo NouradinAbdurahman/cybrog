@@ -1,0 +1,22 @@
+.button {
+    outline: none;
+    border: none;
+    padding: 7px 20px;
+    background-color: var(--main-color);
+    text-transform: capitalize;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+.button:hover {
+    background-color: white;
+    color: black;
+}

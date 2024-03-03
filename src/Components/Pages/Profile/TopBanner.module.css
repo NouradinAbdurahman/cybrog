@@ -1,0 +1,77 @@
+.topBanner{
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    border-bottom: 1px solid #26292a;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    gap: 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.topBannerCards  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.topBannerCards:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.topBannerCardsContent {
+    width: 100%;
+    height: 100%;
+}
+.topBannerCardsContent img {
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.topBanner .offline {
+    cursor: unset;
+}
+.topBanner .offline:hover {
+    background-color: #eb608f;
+    color: white;
+}
+.topBanner .button {
+    background-color: unset;
+    border: 1px solid #eb608f;
+    color: #eb608f;
+}
+.topBanner .button:hover {
+    background-color: white;
+    color: #eb608f;
+    border-color: white;
+}
+.topBanner .name {
+    padding: 15px 0;
+    font-weight: bolder;
+}
+.topBanner .desc {
+   color: #666666;
+   padding-bottom: 10px;
+}
+@media screen and (max-width: 1000px){
+    .topBanner{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .topBannerCardsContent img {
+        width: 100%;
+        height: 100%;
+    }
+    .topBannerCards:nth-child(2) {
+        padding: 50px 0;
+    }
+}
