@@ -20,18 +20,21 @@ const HowToStartLiveStream = () => {
         </div>
         <div className={classes.howToStartLiveStreamCards}>
           <HowToStartLiveStreamCards
+            stepNumber="1"
             cardImage={serviceImage1}
             cardAlt="CardImage"
             title="Go To Your Profile"
             desc="Cyborg Gaming is free HTML CSS website template provided by TemplateMo. This is Bootstrap v5.2.0 layout"
           />
           <HowToStartLiveStreamCards
+            stepNumber="2"
             cardImage={serviceImage2}
             cardAlt="CardImage"
-            title="Live Stream Butto"
+            title="Live Stream Button"
             desc="If you wish to support us, you can make a small contribution via PayPal to info [at] templatemo.com"
           />
           <HowToStartLiveStreamCards
+            stepNumber="3"
             cardImage={serviceImage3}
             cardAlt="CardImage"
             title="You Are Live"

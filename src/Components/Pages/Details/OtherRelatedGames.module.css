@@ -1,31 +1,53 @@
 .otherRelatedGames {
-    padding: 50px 0;
+    padding: 50px 0 70px;
+    width: 100%;
 }
+
 .otherRelatedGamesTitle {
     padding-top: 20px;
-    font-size: 2rem;
-    font-weight: bolder;
-    padding-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding-bottom: 40px;
     color: #eb608f;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
 }
+
 .otherRelatedGamesTitle span {
     color: white;
     text-decoration: underline;
 }
+
+.otherRelatedGamesTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ec6090, transparent);
+    border-radius: 3px;
+}
+
 .otherRelatedGamesContent {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
 }
+
 .otherRelatedGamesContentLeft, .otherRelatedGamesContentRight {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
 }
+
 .otherRelatedGamesContentLeftContent, .otherRelatedGamesContentRightContent {
     width: 100%;
     height: 100%;
@@ -33,30 +55,156 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #26292a;
-
+    margin-bottom: 0;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(38, 41, 42, 0.7);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.otherRelatedGamesContentLeftContent:hover, .otherRelatedGamesContentRightContent:hover {
+    transform: translateY(-8px);
+    background-color: rgba(38, 41, 42, 0.95);
+    border-color: rgba(236, 96, 144, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.otherRelatedGamesContentLeftContent::before, .otherRelatedGamesContentRightContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(236, 96, 144, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.otherRelatedGamesContentLeftContent:hover::before, .otherRelatedGamesContentRightContent:hover::before {
+    left: 100%;
+}
+
 .imageName {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.image img {
+
+.image {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     margin-right: 20px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
 }
+
+.otherRelatedGamesContentLeftContent:hover .image,
+.otherRelatedGamesContentRightContent:hover .image {
+    box-shadow: 0 8px 20px rgba(236, 96, 144, 0.3);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.otherRelatedGamesContentLeftContent:hover img,
+.otherRelatedGamesContentRightContent:hover img {
+    transform: scale(1.1);
+}
+
+.name {
+    transition: all 0.3s ease;
+}
+
+.otherRelatedGamesContentLeftContent:hover .name,
+.otherRelatedGamesContentRightContent:hover .name {
+    transform: translateX(5px);
+}
+
 .name h3 {
     font-size: 18px;
     font-weight: bolder;
+    color: white;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
 }
+
+.otherRelatedGamesContentLeftContent:hover .name h3,
+.otherRelatedGamesContentRightContent:hover .name h3 {
+    color: #ec6090;
+}
+
 .name p {
     font-size: 17px;
-    color: #666;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.otherRelatedGamesContentLeftContent:hover .name p,
+.otherRelatedGamesContentRightContent:hover .name p {
+    color: #ccc;
+}
+
+.stars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all 0.3s ease;
+}
+
+.otherRelatedGamesContentLeftContent:hover .stars,
+.otherRelatedGamesContentRightContent:hover .stars {
+    transform: translateX(-5px);
+}
+
+.stars p {
+    margin: 5px 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.otherRelatedGamesContentLeftContent:hover .stars p,
+.otherRelatedGamesContentRightContent:hover .stars p {
+    color: white;
+}
+
+@media screen and (max-width: 992px) {
+    .otherRelatedGamesContent {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .otherRelatedGamesTitle {
+        font-size: 2rem;
+    }
+    
+    .imageName {
+        width: 50%;
+    }
+    
+    .image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .name h3 {
+        font-size: 16px;
+    }
+    
+    .name p {
+        font-size: 14px;
+    }
 }

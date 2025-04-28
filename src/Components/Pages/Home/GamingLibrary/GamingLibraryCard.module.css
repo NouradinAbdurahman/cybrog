@@ -4,7 +4,23 @@
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid #26292a;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
+
+.GamingLibraryCard:hover {
+    background-color: rgba(38, 41, 42, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #ec6090;
+}
+
 .GamingLibraryCardImageName, 
 .GamingLibraryCardInfo, 
 .GamingLibraryCardButton {
@@ -12,21 +28,48 @@
     flex-direction: row;
     color: white;
 }
+
 .GamingLibraryCardButton {
      display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.GamingLibraryCardImage img {
-    width: 70%;
-    height: 100%;
+.GamingLibraryCardImage {
+    width: 120px;
+    height: 120px;
     margin-right: 20px;
+    overflow: hidden;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+}
+
+.GamingLibraryCardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.GamingLibraryCard:hover .GamingLibraryCardImage img {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(236, 96, 144, 0.6);
 }
 
 .GamingLibraryCardInfo {
@@ -37,19 +80,37 @@
     justify-content: space-between;
     padding-right: 50px;
 }
+
 .GamingLibraryCardTitle,
 .GamingLibraryCardDateInfo,
 .GamingLibraryCardHoursTitle,
 .GamingLibraryCardCurrentlyTitle {
     font-size: 15px;
     font-weight: bolder;
+    transition: all 0.3s ease;
 }
+
+.GamingLibraryCard:hover .GamingLibraryCardTitle,
+.GamingLibraryCard:hover .GamingLibraryCardDateInfo,
+.GamingLibraryCard:hover .GamingLibraryCardHoursTitle,
+.GamingLibraryCard:hover .GamingLibraryCardCurrentlyTitle {
+    color: #ec6090;
+}
+
 .GamingLibraryCardDesc,
 .GamingLibraryCardDateDesc,
 .GamingLibraryCardHoursDesc,
 .GamingLibraryCardCurrentlyDesc {
     font-size: 15px;
     color: var(--link-color);
+    transition: all 0.3s ease;
+}
+
+.GamingLibraryCard:hover .GamingLibraryCardDesc,
+.GamingLibraryCard:hover .GamingLibraryCardDateDesc,
+.GamingLibraryCard:hover .GamingLibraryCardHoursDesc,
+.GamingLibraryCard:hover .GamingLibraryCardCurrentlyDesc {
+    color: #fff;
 }
 
 .GamingLibraryCardButton {
@@ -57,14 +118,30 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
 .GamingLibraryCardBtn {
     background-color: transparent;
     border: 1px solid #666666;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
-.GamingLibraryCardBtn:hover {
-    background-color: unset;
+
+.GamingLibraryCard:hover .GamingLibraryCardBtn {
+    background-color: #ec6090;
+    border-color: #ec6090;
     color: white;
+    box-shadow: 0 0 10px rgba(236, 96, 144, 0.6);
 }
+
+.GamingLibraryCardBtn:hover {
+    background-color: #fff !important;
+    color: #ec6090 !important;
+    transform: scale(1.05);
+}
+
 .GamingLibraryCardBtn .GamingLibraryCardBtnActive {
     background-color: aliceblue;
 }
@@ -152,10 +229,12 @@
         border: 1px solid #666666;
     }
     .GamingLibraryCardImage {
+        width: 100px;
+        height: 100px;
         padding-bottom: 20px;
     }
     .GamingLibraryCardImage img {
-        width: 70%;
+        width: 100%;
         height: 100%;
         margin-right: 20px;
         border-radius: 20px;
@@ -163,6 +242,7 @@
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;
         -o-border-radius: 20px;
+        object-fit: cover;
     }
 }
 

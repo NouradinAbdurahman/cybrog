@@ -3,15 +3,24 @@
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
 }
-.rightInfo p  {
+
+.rightInfo p {
     padding-bottom: 10px;
+    transition: all 0.3s ease;
 }
+
 .rightInfoContent h4 {
     padding-bottom: 10px;
+    font-size: 1.5rem;
+    color: #ec6090;
+    transition: all 0.3s ease;
 }
+
 .rightInfoContent p {
     color: #666666;
+    transition: all 0.3s ease;
 }
+
 .rightInfo, .leftInfo {
     display: flex;
     flex-direction: row;
@@ -20,11 +29,45 @@
     padding: 25px;
     background-color: #26292a;
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid transparent;
+    overflow: hidden;
 }
+
+.rightInfo:hover, .leftInfo:hover {
+    transform: translateY(-8px);
+    border-color: rgba(236, 96, 144, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.rightInfo:hover .rightInfoContent h4 {
+    transform: translateX(5px);
+}
+
+.rightInfo:hover p, .leftInfo:hover p {
+    color: white;
+}
+
+.rightInfo::before, .leftInfo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(236, 96, 144, 0.1), transparent 70%);
+    opacity: 0;
+    transition: all 0.6s ease;
+    transform: translate3d(0, 0, 0);
+}
+
+.rightInfo:hover::before, .leftInfo:hover::before {
+    opacity: 1;
+    transform: translate3d(-25%, -25%, 0);
+}
+
 .detailsBannerImageBottomImages {
     margin-top: 50px;
     width: 100%;
@@ -33,23 +76,121 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
 }
+
+.detailsBannerImageBottomImagesContent {
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+.detailsBannerImageBottomImagesContent:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.detailsBannerImageBottomImagesContent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.detailsBannerImageBottomImagesContent:hover::after {
+    border-color: rgba(236, 96, 144, 0.7);
+    box-shadow: 0 0 20px rgba(236, 96, 144, 0.3);
+}
+
 .detailsBannerImageBottomImages img {
     width: 100%;
+    height: 100%;
     text-align: center;
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    transition: all 0.5s ease;
+    transform: scale(1);
 }
+
+.detailsBannerImageBottomImagesContent:hover img {
+    transform: scale(1.05);
+}
+
+.detailsBannerImageBottomContent {
+    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: rgba(38, 41, 42, 0.5);
+    border: 1px solid rgba(236, 96, 144, 0.1);
+    transition: all 0.4s ease;
+}
+
+.detailsBannerImageBottomContent:hover {
+    background-color: rgba(38, 41, 42, 0.8);
+    border-color: rgba(236, 96, 144, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .detailsBannerImageBottomContent p {
-    padding-top: 30px;
-    color: #666666;
-    line-height: 1.5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #999;
+    line-height: 1.7;
+    transition: all 0.4s ease;
 }
+
+.detailsBannerImageBottomContent:hover p {
+    color: white;
+}
+
 .buuton {
     width: 100%;
     background-color: transparent;
     border: 1px solid #e75e8c;
     color: #e75e8c;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.buuton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #e75e8c;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.buuton:hover {
+    color: white;
+}
+
+.buuton:hover::before {
+    left: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .detailsBannerImageTopContent {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detailsBannerImageBottomImages {
+        grid-template-columns: 1fr;
+    }
 }

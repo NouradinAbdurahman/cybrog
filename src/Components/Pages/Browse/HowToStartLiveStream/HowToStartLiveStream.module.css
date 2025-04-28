@@ -1,25 +1,74 @@
-
 .howToStartLiveStream {
     width: 100%;
     height: 100%;
     padding: 50px 0;
+    display: flex;
+    justify-content: center;
 }
+
+.howToStartLiveStreamContent {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .howToStartLiveStreamCards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 20px 0 40px;
 }
+
 .howToStartLiveStream .howToStartLiveStreamBtn {
     text-align: center;
+    margin-top: 20px;
 }
+
 .howToStartLiveStreamTitle .title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bolder;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     color: #eb608f;
+    position: relative;
 }
+
+.howToStartLiveStreamTitle .title::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #eb608f;
+    border-radius: 3px;
+}
+
 .howToStartLiveStreamTitle .title span{
     color: white;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 992px) {
+    .howToStartLiveStreamCards {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 20px 10px 40px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* For Firefox */
+    }
+    
+    .howToStartLiveStreamCards::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .howToStartLiveStreamCards {
+        padding: 10px;
+    }
 }

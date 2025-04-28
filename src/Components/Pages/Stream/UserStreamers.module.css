@@ -1,49 +1,125 @@
 .userStreamers {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #26292a;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
-.userStreamers:last-child {
-    border-bottom:  unset;
-}
+
 .userStreamersContent {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
+    padding: 15px;
+    background-color: #1f2122;
+    border-radius: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.userStreamersContent:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #eb608f;
+    background-color: rgba(31, 33, 34, 0.95);
+}
+
+.userStreamersContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(235, 96, 143, 0.2), transparent);
+    transition: all 0.6s ease-in-out;
+}
+
+.userStreamersContent:hover::before {
+    left: 100%;
 }
 
 .userStreamersContentInfo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-
 }
+
 .profile {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
+
 .profile img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    padding: 0 20px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    margin: 0 15px;
+    transition: all 0.3s ease;
 }
-.button span {
-    color: white;
+
+.userStreamersContent:hover .profile img {
+    border-color: #eb608f;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(235, 96, 143, 0.5);
 }
-.button:hover span {
-    color: #eb608f;
-}
-.name {
-    color: #eb608f;
-}
+
 .count {
     font-size: 1.1rem;
     font-weight: bolder;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #27292a;
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.userStreamersContent:hover .count {
+    background: #eb608f;
+    transform: scale(1.1);
+}
+
+.name {
+    color: #eb608f;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.userStreamersContent:hover .name {
+    transform: translateX(3px);
+}
+
+.button {
+    transition: all 0.3s ease;
+    background-color: rgba(235, 96, 143, 0.2);
+    border: 1px solid transparent;
+}
+
+.button span {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.userStreamersContent:hover .button {
+    background-color: rgba(235, 96, 143, 0.8);
+}
+
+.button:hover {
+    background-color: #fff !important;
+    transform: scale(1.05);
+}
+
+.button:hover span {
+    color: #eb608f;
 }

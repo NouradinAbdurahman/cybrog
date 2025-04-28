@@ -1,43 +1,105 @@
-/* .MostPopularLiveStreamCard {
-} */
+.mostPopularLiveStreamCard {
+    background-color: #1f2122;
+    border-radius: 20px;
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mostPopularLiveStreamCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #eb608f;
+}
+
+.mostPopularLiveStreamCard::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(235, 96, 143, 0.1), transparent 70%);
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.6s ease-in-out;
+    transform: translate3d(0, 0, 0);
+}
+
+.mostPopularLiveStreamCard:hover::before {
+    opacity: 1;
+    transform: translate3d(-25%, -25%, 0);
+}
+
 .mostPopularLiveStreamCardInfo {
     display: flex;
     flex-direction: row;
+    padding: 15px 0 5px;
+    position: relative;
+    z-index: 1;
 }
+
 .mostPopularLiveStreamCardInfoName h3 {
     color: #eb608f;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin: 0 0 5px 0;
 }
+
 .mostPopularLiveStreamCardInfoName p {
-    font-size: 1.1rem;
-    font-weight: bolder;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+    margin: 0;
 }
+
+.mostPopularLiveStreamCard:hover .mostPopularLiveStreamCardInfoName h3 {
+    transform: translateX(3px);
+}
+
+.mostPopularLiveStreamCard:hover .mostPopularLiveStreamCardInfoName p {
+    color: #eee;
+}
+
 .mostPopularLiveStreamCardImage {
     width: 100%;
     position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 .mostPopularLiveStreamCardImage img {
     width: 100%;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    transform: scale(1);
 }
+
+.mostPopularLiveStreamCard:hover .mostPopularLiveStreamCardImage img {
+    transform: scale(1.05);
+}
+
 .overlay {
-    display: none;
     width: 100%;
     height: 100%;
     position: absolute;
     content: " ";
     top: 0;
     bottom: 0;
-    transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    opacity: 0;
+    transition: all 0.4s ease;
 }
+
+.mostPopularLiveStreamCard:hover .overlay {
+    opacity: 1;
+}
+
 .overlayTop {
     position: absolute;
     content: " ";
@@ -49,49 +111,92 @@
     right: 15px;
     background-color: var(--main-color);
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(235, 96, 143, 0.3);
 }
+
+.mostPopularLiveStreamCard:hover .overlayTop {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .overlayBottom {
     position: absolute;
     width: 100%;
     content: " ";
-    bottom: 0;
+    bottom: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
 }
+
+.mostPopularLiveStreamCard:hover .overlayBottom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .overlayBottom p {
     color: white;
+    margin: 0;
 }
+
 .view, .gameName {
     background-color: var(--main-color);
-    padding: 7px 10px;
+    padding: 7px 15px;
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+.view:hover, .gameName:hover {
+    background-color: #fff;
+    color: #eb608f;
+    transform: scale(1.05);
+}
+
 .view {
     margin-right: 10px;
 }
-.mostPopularLiveStreamCardImage:hover .overlay {
-    display: block;
-}
-.mostPopularLiveStreamCardInfo {
-    padding: 20px 0;
-}
+
 .profileAvatar {
     padding-right: 10px;
+    position: relative;
 }
-.profileAvatar img {
+
+.profileAvatar::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #4CAF50;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    bottom: 0;
+    right: 12px;
+    border: 2px solid #1f2122;
+    transition: all 0.3s ease;
+}
+
+.mostPopularLiveStreamCard:hover .profileAvatar::after {
+    transform: scale(1.2);
+}
+
+.profileAvatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.mostPopularLiveStreamCard:hover .profileAvatar img {
+    border-color: #eb608f;
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(235, 96, 143, 0.5);
 }

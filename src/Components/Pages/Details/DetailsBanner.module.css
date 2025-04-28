@@ -1,3 +1,8 @@
+.detailsBanner {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .detailsBannerContent {
     width: 100%;
     height: 100%;
@@ -5,22 +10,88 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: center;
+    gap: 20px;
 }
 
 .featureLeft {
     height: 100%;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
 }
-.featureRight {
-    margin-left: 20px;
 
+.featureRight {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
 }
+
+.featureLeft:hover, .featureRight:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.featureLeft::before, .featureRight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.featureLeft:hover::before, .featureRight:hover::before {
+    opacity: 1;
+}
+
 .featureLeft img, .featureRight img {
     text-align: center;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+.featureLeft:hover img, .featureRight:hover img {
+    transform: scale(1.05);
+}
+
+.featureRight::after, .featureLeft::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.featureRight:hover::after, .featureLeft:hover::after {
+    border-color: rgba(236, 96, 144, 0.7);
+    box-shadow: 0 0 30px rgba(236, 96, 144, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .detailsBannerContent {
+        flex-direction: column;
+    }
+    
+    .featureRight {
+        margin-left: 0;
+        margin-top: 20px;
+    }
 }

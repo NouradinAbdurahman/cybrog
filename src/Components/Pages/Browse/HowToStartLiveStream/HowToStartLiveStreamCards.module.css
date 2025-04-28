@@ -1,29 +1,128 @@
+.howToStartLiveStreamCards {
+    flex: 0 0 auto;
+    max-width: 320px;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: center;
+}
 
 .howToStartLiveStreamCard {
-    padding: 20px;
-    margin: 40px 0;
-    border: 1px solid gray;
+    background-color: #1f2122;
+    width: 100%;
+    padding: 30px;
+    margin: 0;
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.howToStartLiveStreamCard::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #eb608f, #330f22, #1f2122, #ec6090);
+    z-index: -1;
+    border-radius: 20px;
+    background-size: 400%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.howToStartLiveStreamCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+}
+
+.howToStartLiveStreamCard:hover::before {
+    opacity: 1;
+    animation: glowing 8s linear infinite;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.howToStartLiveStreamCard .imageContainer {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+
 .howToStartLiveStreamCard img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    margin-bottom: 10px;
+    border: 3px solid transparent;
+    object-fit: cover;
+    transition: all 0.4s ease;
 }
+
+.howToStartLiveStreamCard:hover img {
+    border-color: #eb608f;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(235, 96, 143, 0.5);
+}
+
 .howToStartLiveStreamCard h4 {
-    font-size: 1.1rem;
-    font-weight: bolder;
-    padding: 10px 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 15px 0 10px;
+    color: #ec6090;
+    transition: all 0.3s ease;
 }
+
+.howToStartLiveStreamCard:hover h4 {
+    transform: translateY(-2px);
+}
+
 .howToStartLiveStreamCard p {
-    color: #606161;
-    font-size: .8rem;
-    line-height: 1.5;
+    color: #9b9b9b;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    padding: 0 10px;
+}
+
+.howToStartLiveStreamCard:hover p {
+    color: #ffffff;
+}
+
+.howToStartLiveStreamCard .number {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(235, 96, 143, 0.2);
+    color: #ec6090;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.howToStartLiveStreamCard:hover .number {
+    background: #ec6090;
+    color: white;
+    transform: scale(1.1);
 }
