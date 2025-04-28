@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 // import { Header, Container, Footer, Banner } from './Components/index';
 import Home from './Components/Pages/Home/Home';
@@ -12,7 +12,7 @@ import { Footer } from './Components';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="browse" element={<Browse />} />
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer/>
-    </BrowserRouter>
+    </Router>
   );
 }
 export default App;
